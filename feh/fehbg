@@ -1,0 +1,3 @@
+#!/bin/sh
+
+'feh' '--bg-fill' '/nfs/home/lthevenoux/Pictures/pluto.jpg'
