@@ -32,7 +32,9 @@ There are two things you can do about this warning:
       (:network-server . "xxx.xxx.xxx")
       (:port . 5222)
       (:connection-type . starttls)))))
- '(package-selected-packages (quote (tuareg json-mode markdown-mode magit jabber)))
+ '(package-selected-packages
+   (quote
+    (markdown-preview-mode tuareg json-mode markdown-mode magit jabber)))
  '(show-paren-mode t)
  '(size-indication-mode t)
  '(tool-bar-mode nil))
