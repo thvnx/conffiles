@@ -3,5 +3,5 @@ Packages to install:
   - json-mode
   - magit
   - markdown-mode
+  - markdown-preview-mode
   - tuareg
-  
