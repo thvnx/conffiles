@@ -44,4 +44,12 @@ There are two things you can do about this warning:
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
- 
+(setq markdown-command "/usr/bin/pandoc")
+
+;; LLVM highlighting
+(setq load-path
+      (cons (expand-file-name "~/.emacs.d/llvm") load-path))
+(require 'llvm-mode)
+(setq load-path
+      (cons (expand-file-name "~/.emacs.d/llvm") load-path))
+(require 'tablegen-mode)
