@@ -1,7 +1,12 @@
 Packages to install:
+  - ggtags
+  - ivy
   - jabber
   - json-mode
   - magit
   - markdown-mode
   - markdown-preview-mode
+  - modern-cpp-font-lock
+  - swiper
   - tuareg
+  - use-package

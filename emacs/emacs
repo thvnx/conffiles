@@ -26,6 +26,7 @@ There are two things you can do about this warning:
  '(column-number-mode t)
  '(custom-enabled-themes (quote (wombat)))
  '(global-display-line-numbers-mode t)
+ '(ivy-mode t)
  '(jabber-account-list
    (quote
     (("xxx@xxx.xxx"
@@ -34,7 +35,7 @@ There are two things you can do about this warning:
       (:connection-type . starttls)))))
  '(package-selected-packages
    (quote
-    (markdown-preview-mode tuareg json-mode markdown-mode magit jabber)))
+    (modern-cpp-font-lock ggtags use-package swiper ivy markdown-preview-mode tuareg json-mode markdown-mode magit jabber)))
  '(show-paren-mode t)
  '(size-indication-mode t)
  '(tool-bar-mode nil))
@@ -45,6 +46,40 @@ There are two things you can do about this warning:
  ;; If there is more than one, they won't work right.
  )
 (setq markdown-command "/usr/bin/pandoc")
+
+(require 'use-package)
+;; Ivy
+(use-package ivy
+  :ensure t
+  :commands (ivy-mode)
+  :config
+  (require 'ivy)
+  (ivy-mode t)
+  (setq ivy-use-virtual-buffers t)
+  (setq enable-recursive-minibuffers t)
+  (setq ivy-wrap t)
+  (global-set-key (kbd "C-c C-r") 'ivy-resume)
+  ;; Show #/total when scrolling buffers
+  (setq ivy-count-format "%d/%d ")
+  )
+
+(use-package swiper
+  :ensure t
+  :bind (("C-s" . swiper)
+         ("C-r" . swiper))
+  )
+
+;; modern cpp
+(use-package modern-cpp-font-lock
+  :ensure t
+  :init
+  (eval-when-compile
+      ;; Silence missing function warnings
+    (declare-function modern-c++-font-lock-global-mode
+                      "modern-cpp-font-lock.el"))
+  :config
+  (modern-c++-font-lock-global-mode t)
+)
 
 ;; LLVM highlighting
 (setq load-path
