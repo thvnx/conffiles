@@ -1,0 +1,9 @@
+[user]
+	name = Laurent Thévenoux
+	email = lthevenoux@kalray.eu
+[core]
+	editor = emacsclient --alternate-editor 'emacs -q'
+[color]
+	ui = auto
+[push]
+	default = simple
